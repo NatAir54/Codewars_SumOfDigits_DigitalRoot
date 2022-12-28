@@ -15,6 +15,8 @@ public class DigitsRunner {
         System.out.println("Please enter a number:");
         int number = Math.abs((int)input.nextDouble());
         System.out.println(digitalRoot(number));
+        System.out.println(fastDigitalRoot(number)); // faster way
+
     }
 
     public static int digitalRoot(int number) {
@@ -31,6 +33,14 @@ public class DigitsRunner {
             }
         }
         return sum;
+    }
+
+    // cleanest solution
+    public static int fastDigitalRoot (int number) {
+        while (number > 9) {
+            number = (number / 10) + (number % 10);
+        }
+        return number;
     }
 
 
